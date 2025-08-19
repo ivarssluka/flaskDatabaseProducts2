@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta charset="UTF-8">
+    <title>All Alcohol 🍺</title>
+</head>
+<body>
+<h1 align="center">All Alcohol drinks in Database:</h1>
+
+
+<hr>
+<form method="post">
+    <input type="text" name="find">
+    <button type="submit">Meklēt preci</button>
+</form>
+<hr>
+
+
+{%for oneDrink in alcoData %}
+<div class="alco">
+    <h2 align="center">{{oneDrink[1]}}</h2>
+    <hr>
+    <center><img src='{{oneDrink[2]}}'>
+    </center>
+
+    <ul>
+        <li>Grādi: {{oneDrink[3]}}</li>
+        <li>Cena {{oneDrink[4]}}€</li>
+    </ul>
+    <center>
+        <a href="alcohol/{{oneDrink[0]}}"><button class="buyButton">Pirkt</button></a>
+        <br>
+        <br>
+
+        <form method="post">
+            <input type="hidden" name="drinkID" value="{{oneDrink[0]}}">
+        <button type="submit">Izdzēst</button>
+        </form>
+
+
+    </center>
+</div>
+{% endfor %}
+<hr>
+<a href="/"><button>Atgriezties atpakaļ</button>
+</a>
+
+
+</body>
+</html>

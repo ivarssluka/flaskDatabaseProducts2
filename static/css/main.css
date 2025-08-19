@@ -1,0 +1,36 @@
+.alco{
+    background-color:#d2f2fa;
+    width:400px;
+    height:600px;
+    border:2px solid black;
+    border-radius:70px;
+    display: inline-block;
+    font-size:12px;
+    margin:20px;
+
+}
+img{
+width:250px;
+height:350px;
+
+}
+
+.alco:hover{
+
+background-color:#fdff91;
+border:3px solid red;
+
+}
+
+.buyButton{
+    width:200px;
+    height:50px;
+    border-radius:90px;
+    font-size:19px;
+    font-family:Calibri;
+    background-color:#fa9339;
+    color:white;
+}
+.buyButton:hover{
+    background-color:red;
+}

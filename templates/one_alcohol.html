@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{oneDrink[1]}}</title>
+</head>
+<body>
+    <h1 align="center">{{oneDrink[1]}}</h1>
+    <hr>
+    <table border="1px" cellspacing="0px" align="center" width="800px">
+       <tr>
+           <td width="50%" align="center">
+               <h3>Grādi: {{oneDrink[3]}} %<br>
+           Cena: {{oneDrink[4]}} € <br>
+
+
+                   {% if oneDrink[5] ==1 %}
+                    <h3><u>AKCIAJS PRECE 😀</u>
+                    {% else %}
+                    <U>NAV AKCIAJS PRECE 😓</U>
+
+                   {% endif %}
+                    </h3>
+                   <form method="post">
+                            Daudzums: <input type="number" name="daudzums" min="1" max="99" step="1"><br>
+                        <button type="submit">Pievienot grozam</button>
+
+                   </form>
+                    {% if totalPay != 0 %}
+                        <i>Kopā būs jāmaksā {{totalPay}} € </i><br>
+                        <i>Pudeļu skaits {{daudzums}}</i>
+                        <br>
+                        {% for i in range(0, daudzums) %}
+
+                            <img width="10%" src="{{oneDrink[2]}}">
+
+                        {% endfor %}
+
+
+                    {% endif %}
+               </h3>
+           </td>
+           <td><img width="50%" height="50%" src="{{oneDrink[2]}}"></td>
+       </tr>
+    </table>
+    <hr>
+    <a href="/alcohol"><button>Izvelēties citu dzērienu</button></a>
+
+</body>
+</html>
